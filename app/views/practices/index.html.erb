@@ -1,14 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Practices</h1>
+<h1>Referring Practices</h1>
 
-<div id="practices">
-  <% @practices.each do |practice| %>
-    <%= render practice %>
-    <p>
-      <%= link_to "Show this practice", practice %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "New practice", new_practice_path %>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th> </th>
+    </tr>
+  </thead>
+
+
+  <div id="practices">
+    <% @practices.each do |practice| %>
+    <tr>
+      <td> <%= link_to practice.name, practice %></td>
+      <td><%= practice.phone %></td>
+      <td><%= practice.address %></td>
+      <td><%= practice.state%></td>
+      <td><%= practice.zip_code %></td>
+      <td>
+        <%= link_to 'Delete', practice, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-danger btn-sm" %>
+      </td>
+    </tr>
+    <% end %>
+  </div>
+</table>
+
+<%= link_to "New practice", new_practice_path, class:"btn btn-secondary" %>

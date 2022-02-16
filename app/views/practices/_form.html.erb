@@ -11,36 +11,36 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="row">
+    <div class="col form-group">
+      <%= form.text_field :name, class:"form-control", placeholder:"Practice Name" %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <br/>
+  <div class="row">
+    <div class="col form-group">
+      <%= form.text_field :phone, class:"form-control", placeholder:"Phone Number" %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+  <br/>
+  <div class="row">
+    <div class="col form-group">
+      <%= form.text_field :address, class:"form-control", placeholder:"Address" %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
+  <br/>
+  <div class="row">
+    <div class="col-6 form-group">
+      <%= form.text_field :city, class:"form-control", placeholder:"City" %>
+    </div>
+    <div class="col-2 form-group">
+      <%= form.text_field :state, class:"form-control", placeholder:"State" %>
+    </div>
+    <div class="col-4 form-group">
+      <%= form.text_field :zip_code, class:"form-control", placeholder:"Zip Code"%>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div>
-    <%= form.label :zip_code, style: "display: block" %>
-    <%= form.text_field :zip_code %>
-  </div>
-
+  <br/>
   <div>
     <%= form.submit %>
   </div>
